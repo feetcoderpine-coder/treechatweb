@@ -1,0 +1,986 @@
+
+/* ==========================================
+   TREECHAT — MARKETING DESIGN SYSTEM
+   src/app/marketing.module.css
+
+   Used by:
+   /features
+   /pricing
+========================================== */
+
+/* BASE */
+
+.marketing {
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+
+  color: #f8fafc;
+
+  background:
+    radial-gradient(
+      ellipse at 95% 10%,
+      rgba(0, 180, 90, 0.19),
+      transparent 36%
+    ),
+    radial-gradient(
+      ellipse at 2% 75%,
+      rgba(151, 39, 218, 0.16),
+      transparent 38%
+    ),
+    #030708;
+
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+.marketing::before {
+  content: "";
+  position: absolute;
+  top: 100px;
+  right: -240px;
+
+  width: 680px;
+  height: 680px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(21, 255, 117, 0.12),
+    transparent 70%
+  );
+
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: -1;
+
+  animation: ambientFloat 13s ease-in-out infinite alternate;
+}
+
+.marketing::after {
+  content: "";
+  position: absolute;
+  left: -280px;
+  bottom: 80px;
+
+  width: 650px;
+  height: 650px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(170, 53, 255, 0.14),
+    transparent 70%
+  );
+
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: -1;
+
+  animation: ambientFloat 17s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes ambientFloat {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(-45px, 35px, 0) scale(1.15);
+  }
+}
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+.nav {
+  position: relative;
+  z-index: 20;
+
+  max-width: 1440px;
+  height: 82px;
+  padding: 0 32px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  color: white;
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brand img {
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.brand:hover img {
+  transform: rotate(-8deg) scale(1.07);
+}
+
+.links,
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.links a {
+  color: #c4cbd0;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: color 0.2s ease;
+}
+
+.links a:hover,
+.links .active {
+  color: #67ff91;
+}
+
+.actions {
+  gap: 12px;
+}
+
+.login,
+.start {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 12px 23px;
+  border-radius: 40px;
+
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.login {
+  border: 1px solid #303d41;
+  color: white;
+}
+
+.login:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.start {
+  background: linear-gradient(110deg, #91ffa7, #43ed75);
+  color: #061408;
+  box-shadow: 0 0 22px rgba(64, 255, 126, 0.12);
+}
+
+.start:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(64, 255, 126, 0.25);
+}
+
+.mobileMenu {
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  background: transparent;
+  color: white;
+
+  cursor: pointer;
+}
+
+/* ==========================================
+   MAIN CONTENT
+========================================== */
+
+.container {
+  position: relative;
+  z-index: 1;
+
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 72px 28px 110px;
+
+  animation: pageEnter 0.85s ease-out both;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================
+   HEADINGS
+========================================== */
+
+.heading {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 62px;
+}
+
+.eyebrow {
+  display: inline-block;
+
+  border: 1px solid #185537;
+  background: rgba(31, 179, 85, 0.12);
+  color: #67ff96;
+
+  padding: 8px 17px;
+  border-radius: 30px;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.heading h1 {
+  font-size: clamp(36px, 4.5vw, 60px);
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.12;
+
+  margin: 24px 0 18px;
+}
+
+.heading p {
+  color: #aab6b8;
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.gradient {
+  background: linear-gradient(
+    95deg,
+    #6aff92,
+    #6dffd0,
+    #bc8dff
+  );
+
+  background-size: 220% 100%;
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: gradientShift 8s ease-in-out infinite alternate;
+}
+
+@keyframes gradientShift {
+  from {
+    background-position: 0% 50%;
+  }
+
+  to {
+    background-position: 100% 50%;
+  }
+}
+
+/* ==========================================
+   FEATURES PAGE — SIX CARDS
+========================================== */
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.featureCard {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 235px;
+  border-radius: 22px;
+  border: 1px solid #253035;
+  padding: 30px;
+
+  background: linear-gradient(
+    145deg,
+    #10191a,
+    #090e11
+  );
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  animation: featureEntrance 0.7s ease both;
+}
+
+.featureCard:nth-child(3n + 1) {
+  background: linear-gradient(
+    145deg,
+    #102b21,
+    #090e11 75%
+  );
+}
+
+.featureCard:nth-child(3n + 2) {
+  background: linear-gradient(
+    145deg,
+    #25162f,
+    #090e11 75%
+  );
+}
+
+.featureCard:nth-child(3n + 3) {
+  background: linear-gradient(
+    145deg,
+    #102330,
+    #090e11 75%
+  );
+}
+
+.featureCard:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.featureCard:nth-child(3) {
+  animation-delay: 0.16s;
+}
+
+.featureCard:nth-child(4) {
+  animation-delay: 0.24s;
+}
+
+.featureCard:nth-child(5) {
+  animation-delay: 0.32s;
+}
+
+.featureCard:nth-child(6) {
+  animation-delay: 0.4s;
+}
+
+.featureCard:hover {
+  transform: translateY(-8px);
+  border-color: #56e88d;
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.3),
+    0 0 28px rgba(60, 255, 120, 0.12);
+}
+
+@keyframes featureEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.featureIcon {
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+  color: #74ffa2;
+  background: rgba(50, 240, 120, 0.12);
+
+  margin-bottom: 27px;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.featureCard:nth-child(3n + 2) .featureIcon {
+  color: #d49aff;
+  background: rgba(175, 78, 255, 0.13);
+}
+
+.featureCard:nth-child(3n + 3) .featureIcon {
+  color: #8bdcff;
+  background: rgba(52, 169, 240, 0.12);
+}
+
+.featureCard:hover .featureIcon {
+  transform: scale(1.1) rotate(-4deg);
+  box-shadow: 0 0 25px rgba(62, 255, 126, 0.18);
+}
+
+.featureCard h2 {
+  font-size: 21px;
+  margin: 0 0 12px;
+}
+
+.featureCard p {
+  color: #9eaeb2;
+  line-height: 1.65;
+  font-size: 14px;
+  margin: 0;
+}
+
+.featureArrow {
+  position: absolute;
+  bottom: 22px;
+  right: 24px;
+
+  color: #7affaa;
+  opacity: 0;
+  transform: translateX(-8px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.featureCard:hover .featureArrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ==========================================
+   FEATURE BENEFITS
+========================================== */
+
+.benefitsSection {
+  margin-top: 90px;
+  padding: 35px 0;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.benefitItem > svg {
+  flex-shrink: 0;
+  color: #72ff9b;
+}
+
+.benefitItem h3 {
+  margin: 0 0 8px;
+  font-size: 15px;
+}
+
+.benefitItem p {
+  margin: 0;
+  color: #92a5a9;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   PRICING PAGE
+========================================== */
+
+.pricingGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 24px;
+}
+
+.pricingCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  min-height: 505px;
+
+  border: 1px solid #30383d;
+  border-radius: 22px;
+  padding: 30px;
+
+  background: linear-gradient(
+    155deg,
+    #141b1f,
+    #090d10
+  );
+
+  animation: pricingEntrance 0.7s ease both;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.pricingCard:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.pricingCard:nth-child(3) {
+  animation-delay: 0.24s;
+}
+
+@keyframes pricingEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pricingCard:hover {
+  transform: translateY(-8px);
+  border-color: #4a8462;
+}
+
+.proCard {
+  border: 1px solid #54ff83;
+
+  background: linear-gradient(
+    150deg,
+    #10251b,
+    #08100d 65%
+  );
+
+  box-shadow:
+    0 0 26px rgba(40, 255, 101, 0.22);
+}
+
+.proCard:hover {
+  border-color: #73ffa0;
+
+  box-shadow:
+    0 0 45px rgba(40, 255, 101, 0.3),
+    0 20px 55px rgba(0, 0, 0, 0.25);
+}
+
+.popular {
+  position: absolute;
+  top: -15px;
+  right: 24px;
+
+  color: #041307;
+  background: #72ff96;
+
+  padding: 8px 15px;
+  border-radius: 20px;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.planName {
+  margin: 0;
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.proCard .planName {
+  color: #6dff92;
+}
+
+.price {
+  margin: 24px 0;
+  font-size: 47px;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.price span {
+  font-size: 13px;
+  color: #a4b1b4;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.planDescription {
+  color: #9faeb1;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 28px;
+}
+
+.benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  margin-bottom: 35px;
+}
+
+.benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.check {
+  flex-shrink: 0;
+  color: #69ff95;
+}
+
+.planButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: auto;
+  padding: 16px;
+
+  border-radius: 12px;
+  background: #1b252a;
+  color: white;
+
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+
+  transition: background 0.2s ease;
+}
+
+.planButton:hover {
+  background: #2a383d;
+}
+
+.proCard .planButton {
+  background: #65ff89;
+  color: #061408;
+}
+
+.proCard .planButton:hover {
+  background: #9affb2;
+}
+
+.footerNote {
+  text-align: center;
+  font-size: 13px;
+  color: #839397;
+  margin-top: 40px;
+}
+
+/* ==========================================
+   BILLING TOGGLE
+========================================== */
+
+.billingToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  margin-top: 32px;
+  padding: 5px;
+
+  background: #101b1e;
+  border: 1px solid #2b3c3e;
+  border-radius: 40px;
+}
+
+.billingToggle button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 12px 19px;
+
+  color: #b3c2c5;
+  background: transparent;
+
+  border: none;
+  border-radius: 30px;
+
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.billingToggle .billingActive {
+  background: #263c32;
+  color: #75ff9a;
+}
+
+.savingsBadge {
+  color: #061408;
+  background: #67ff91;
+
+  padding: 4px 8px;
+  border-radius: 20px;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.billingNote {
+  margin: -12px 0 20px;
+  font-size: 12px;
+  color: #70ff99;
+}
+
+/* ==========================================
+   PRICING HIGHLIGHTS
+========================================== */
+
+.pricingHighlights {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+
+  margin-top: 100px;
+  padding: 48px 0;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pricingHighlight {
+  text-align: center;
+}
+
+.pricingHighlight > svg {
+  color: #78ff9f;
+  margin-bottom: 15px;
+}
+
+.pricingHighlight h3 {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+.pricingHighlight p {
+  margin: 0;
+  color: #93a7aa;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   SHARED CTA
+========================================== */
+
+.featuresCTA {
+  padding: 100px 20px 20px;
+  text-align: center;
+}
+
+.featuresCTA h2 {
+  font-size: clamp(32px, 4vw, 52px);
+  letter-spacing: -1.5px;
+  line-height: 1.2;
+  margin: 25px 0;
+}
+
+.featuresCTA p {
+  max-width: 540px;
+  margin: 0 auto 30px;
+  color: #9cacb0;
+  line-height: 1.7;
+}
+
+.featuresCTA .start {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 27px;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.bottom {
+  text-align: center;
+  padding: 45px 24px 65px;
+  border-top: 1px solid #1a282b;
+
+  color: #859599;
+  font-size: 13px;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 900px) {
+  .featureGrid,
+  .pricingGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pricingHighlights {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .links {
+    gap: 16px;
+  }
+
+  .nav {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .nav {
+    position: relative;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .mobileMenu {
+    display: flex;
+  }
+
+  .nav:has(.mobileMenu[aria-expanded="true"]) .links {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 16px;
+    right: 16px;
+    z-index: 30;
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+
+    padding: 24px;
+    border-radius: 18px;
+    border: 1px solid #2c473a;
+
+    background: rgba(6, 16, 17, 0.98);
+
+    box-shadow:
+      0 20px 50px rgba(0, 0, 0, 0.45);
+  }
+
+  .benefitsGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .featuresCTA {
+    padding-top: 75px;
+  }
+}
+
+@media (max-width: 650px) {
+  .nav {
+    height: 72px;
+  }
+
+  .brand {
+    font-size: 20px;
+  }
+
+  .login {
+    display: none;
+  }
+
+  .start {
+    padding: 11px 17px;
+  }
+
+  .container {
+    padding: 65px 18px 80px;
+  }
+
+  .heading {
+    margin-bottom: 40px;
+  }
+
+  .heading h1 {
+    letter-spacing: -1.5px;
+  }
+
+  .featureGrid,
+  .pricingGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricingCard {
+    min-height: 440px;
+  }
+
+  .pricingHighlights {
+    margin-top: 70px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
+  }
+
+  .billingToggle {
+    max-width: 100%;
+  }
+
+  .billingToggle button {
+    padding: 11px 13px;
+    font-size: 12px;
+  }
+
+  .savingsBadge {
+    font-size: 9px;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .marketing::before,
+  .marketing::after,
+  .container,
+  .gradient,
+  .featureCard,
+  .pricingCard {
+    animation: none !important;
+  }
+
+  .featureCard,
+  .featureIcon,
+  .pricingCard,
+  .billingToggle button {
+    transition: none;
+  }
+}
